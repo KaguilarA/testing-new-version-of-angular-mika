@@ -1,0 +1,22 @@
+{
+  "editor.tabSize": 2,
+  "editor.fontSize": 13,
+  "editor.fontLigatures": true,
+  "editor.renderWhitespace": "all",
+  "editor.renderIndentGuides": true,
+  "editor.renderLineHighlight": "all",
+  "editor.wordWrap": "on",
+  "editor.rulers": [80],
+  "editor.renderControlCharacters": true,
+  "explorer.autoReveal": false,
+  "window.zoomLevel": 0,
+  "explorer.confirmDelete": false,
+  "material-icon-theme.activeIconPack": "angular",
+  "material-icon-theme.files.associations": {
+    "*.controller.js": "angular-component",
+    "route.js": "angular-routing",
+    "*.route.js": "angular-routing",
+    "app.js": "angular"
+  },
+  "vsicons.presets.angular": false
+}

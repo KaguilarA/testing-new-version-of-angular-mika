@@ -1,11 +1,24 @@
-const express = require('express'),
+const bodyParser = require('body-parser'),
+  express = require('express'),
   morgan = require('morgan'),
+  mongoose = require('mongoose'),
   app = express(),
   port = 3000,
   public = require('./public/public.route'),
   api = require('./api/api.route');
 
-let componentsRoute = `../components/`;
+let db = mongoose.connection,
+  dburl = 'mongodb://heroku_3s9zh696:4fuan1boe5l2ah0dn7iqs8kp9s@ds121455.mlab.com:21455/heroku_3s9zh696';
+
+mongoose.connect(dburl, {
+  useNewUrlParser: true
+});
+
+db.on('error', console.error.bind(console, 'Error de conexión: '));
+
+db.once('open', () => {
+  console.log('Base de datos conectada correctamente');
+});
 
 // Settings
 
@@ -30,6 +43,21 @@ app.use('/vendor', express.static(__dirname + '/node_modules/angular-animate/'))
 app.use('/vendor', express.static(__dirname + '/node_modules/angular-filepicker/dist/'));
 
 app.use(morgan(`dev`));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+app.use(morgan('dev'));
+
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Response-Time, X-PINGOTHER, X-CSRF-Token,Authorization');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+});
+
 app.use(public);
 app.use(api);
 
