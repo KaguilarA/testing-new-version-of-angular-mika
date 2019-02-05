@@ -3,13 +3,13 @@ const bodyParser = require('body-parser'),
   morgan = require('morgan'),
   mongoose = require('mongoose'),
   app = express(),
-  eviromentConfig = require('dotenv').config(),
-  port = Number(eviromentConfig.parsed.PORT),
+  dotenv = require('dotenv').config(),
+  port = Number(process.env.PORT),
   public = require('./public/public.route'),
   api = require('./api/api.route');
 
 let db = mongoose.connection,
-  dburl = eviromentConfig.parsed.MONGODB_URI;
+  dburl = process.env.MONGODB_URI;
 
 mongoose.set('useCreateIndex', true)
 mongoose.connect(dburl, {
@@ -63,9 +63,9 @@ app.use((req, res, next) => {
 app.use(public);
 app.use(api);
 
-app.listen(3000, sayHelloToMyLittleFriend());
+app.listen(port, sayHelloToMyLittleFriend());
 
 function sayHelloToMyLittleFriend() {
-  console.log(`Servidor levantado en el puerto ${3000}`);
+  console.log(`Servidor levantado en el puerto ${port}`);
   console.log(`El nombre de la app es ${app.get('appName')}`);
 }
