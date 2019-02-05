@@ -63,7 +63,7 @@ app.use((req, res, next) => {
 app.use(public);
 app.use(api);
 
-app.listen(port, sayHelloToMyLittleFriend());
+app.listen(eviromentConfig.parsed.PORT || 3000, sayHelloToMyLittleFriend());
 
 function sayHelloToMyLittleFriend() {
   console.log(`Servidor levantado en el puerto ${port}`);
