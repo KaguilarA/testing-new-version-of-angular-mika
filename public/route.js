@@ -10,13 +10,13 @@
     $stateProvider
       .state('landingPage', {
         url: '/',
-        templateUrl: './components/landingPage/landingPage.view.html',
+        templateUrl: '/components/landingPage/landingPage.view.html',
         data: {
           pageTitle: 'Cenfotec Software House'
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/landingPage/landingPage.controller.js');
+            return $ocLazyLoad.load('/components/landingPage/landingPage.controller.js');
           }]
         },
         controller: 'landingPageController',
@@ -25,13 +25,13 @@
 
       .state('iniciarSesion', {
         url: '/logIn',
-        templateUrl: './components/logIn/logIn.view.html',
+        templateUrl: '/components/logIn/logIn.view.html',
         data: {
           pageTitle: 'Cenfotec Software House | Iniciar Sesión'
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/logIn/logIn.controller.js');
+            return $ocLazyLoad.load('/components/logIn/logIn.controller.js');
           }]
         },
         controller: 'logInController',
@@ -40,13 +40,13 @@
 
       .state('solicitudEstudiante', {
         url: '/studentRequest',
-        templateUrl: './components/users/students/request/request.view.html',
+        templateUrl: '/components/users/students/request/request.view.html',
         data: {
           pageTitle: 'Cenfotec Software House | Solicitud de registro'
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/users/students/request/request.controller.js');
+            return $ocLazyLoad.load('/components/users/students/request/request.controller.js');
           }]
         },
         controller: 'studentRequestController',
@@ -55,10 +55,10 @@
 
       .state('main', {
         url: '/main',
-        templateUrl: './components/main/main.view.html',
+        templateUrl: '/components/main/main.view.html',
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/main/main.controller.js');
+            return $ocLazyLoad.load('/components/main/main.controller.js');
           }]
         },
         controller: 'mainController',
@@ -67,13 +67,13 @@
 
       .state('main.home', {
         url: '/home',
-        templateUrl: './components/main/views/home.view.html',
+        templateUrl: '/components/main/views/home.view.html',
         data: {
           pageTitle: 'Cenfotec Software House | Inicio'
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/main/main.controller.js');
+            return $ocLazyLoad.load('/components/main/main.controller.js');
           }]
         },
         controller: 'mainController',
@@ -82,13 +82,13 @@
 
       .state('main.verPerfil', {
         url: '/profile',
-        templateUrl: './components/users/profile/profile.view.html',
+        templateUrl: '/components/users/profile/profile.view.html',
         data: {
           pageTitle: 'Cenfotec Software House | Inicio'
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/users/profile/profile.controller.js');
+            return $ocLazyLoad.load('/components/users/profile/profile.controller.js');
           }]
         },
         controller: 'profileController',
@@ -97,13 +97,13 @@
 
       .state('main.registroCarreras', {
         url: '/registerCarrer',
-        templateUrl: './components/carrers/register/register.view.html',
+        templateUrl: '/components/carrers/register/register.view.html',
         data: {
           pageTitle: 'Cenfotec Software House | Inicio'
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/carrers/register/register.controller.js');
+            return $ocLazyLoad.load('/components/carrers/register/register.controller.js');
           }]
         },
         controller: 'carrerRegisterController',
