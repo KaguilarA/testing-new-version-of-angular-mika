@@ -1,0 +1,57 @@
+@import 'settings';
+// Estilos generales
+body {
+  background: $white;
+  font-family: $typho !important;
+  main {
+    max-width: 100%;
+  }
+  .row .container-fluid {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  .active {
+    color: $colorPrimary !important;
+  }
+  .bg-black {
+    background: $black;
+  }
+  .bg-trasparet {
+    background: $trasparent;
+  }
+  .text-white {
+    color: $white;
+  }
+  .text-black {
+    color: $black;
+  }
+  .text-yellow {
+    color: $colorPrimary;
+  }
+  .text-orange {
+    color: $backUpOrange;
+  }
+  .carousel-indicators .active {
+    background-color: $colorPrimary !important;
+  }
+  .cenfotec {
+    &:hover {
+      color: #632c7d !important;
+      text-decoration: none;
+    }
+  }
+  .btn {
+    outline: none !important;
+    font-weight: 300 !important;
+  }
+  .mt-6 {
+    margin-top: 3.5rem !important;
+  }
+  .mt-7 {
+    margin-top: 4rem !important;
+  }
+  .mt-8 {
+    margin-top: 4.5rem !important;
+  }
+}

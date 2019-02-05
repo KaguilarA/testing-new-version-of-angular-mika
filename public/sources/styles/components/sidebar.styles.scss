@@ -1,0 +1,12 @@
+@import '../settings';
+aside {
+  height: 100vh;
+  a {
+    &:hover {
+      color: $colorPrimary !important;
+      .text-yellow{
+        color: $white !important;
+      }
+    }
+  }
+}

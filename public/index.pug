@@ -1,0 +1,45 @@
+doctype html
+html(lang='es', ng-app="cenfotec-software-house")
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    meta(name='author', content='Ascorbix')
+    meta(name='description', content='El Cenfotec Software House nace como complemento de formación que permita a los estudiantes vivir experiencias de trabajo reales, y con un cliente final, alineado con la metodología de proyectos característica de la Universidad Cenfotec, y para dar atención a las múltiples solicites del desarrollo de proyectos TICs')
+    title(page-title='')
+    link(rel='shortcut icon', href='/sources/img/cshLogo.png', type='image/x-icon')
+    link(rel='stylesheet', href='/sources/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css')
+    link(rel='stylesheet', href='/sources/styles.css')
+  body.font-weight-light
+    div(ui-view='')
+    // Dependencias
+    script(src='//api.filestackapi.com/filestack.js')
+    script(src='/vendor/jquery.min.js')
+    script(src='/vendor/popper.min.js')
+    script(src='/vendor/bootstrap.min.js')
+    script(src='/vendor/sweetalert.min.js')
+    // Script de Angular
+    script(src='/vendor/angular.min.js')
+    // Dependencias de Agular
+    script(src='/vendor/angular-ui-router.min.js')
+    script(src='/vendor/ocLazyLoad.min.js')
+    script(src='/vendor/page-title.min.js')
+    script(src='/vendor/angular-messages.min.js')
+    script(src='/vendor/angular-scroll.min.js')
+    script(src='/vendor/ng-file-upload.min.js')
+    script(src='/vendor/ng-file-upload-shim.min.js')
+    script(src='/vendor/angular-animate.min.js')
+    script(src='/vendor/angular_filepicker.min.js')
+    // Script de la aplicación
+    script(src='/classes.js')
+    script(src='/app.js')
+    script(src='/route.js')
+    // Services
+    script(src='/components/services/image.service.js')
+    script(src='/components/services/logIn.service.js')
+    script(src='/components/services/user.service.js')
+    script(src='/components/services/carrers.service.js')
+    // Directives
+    script(src='/components/directives/inputFile.directive.js')
+    script(src='/components/directives/header/header.directive.js')
+    script(src='/components/directives/sidebar/sidebar.directive.js')

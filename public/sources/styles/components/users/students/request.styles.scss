@@ -1,0 +1,22 @@
+@import '../../../settings';
+#sendRequestStudentComponent {
+  max-width: 100% !important;
+  .imageSection {
+    .link {
+      font-size: 1.2rem;
+    }
+    #imagen {
+      background-image: url(./img/fondo1.png), $overlay-gradient;
+      background-blend-mode: overlay;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+      .my-8 {
+        margin: 17.5rem 0;
+      }
+      .ml-8{
+        margin-left: 10.5rem;
+      }
+    }
+  }
+}
