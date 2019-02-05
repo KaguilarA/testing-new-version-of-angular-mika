@@ -63,9 +63,9 @@ app.use((req, res, next) => {
 app.use(public);
 app.use(api);
 
-app.listen(eviromentConfig.parsed.PORT || 3000, sayHelloToMyLittleFriend());
+app.listen(3000, sayHelloToMyLittleFriend());
 
 function sayHelloToMyLittleFriend() {
-  console.log(`Servidor levantado en el puerto ${port}`);
+  console.log(`Servidor levantado en el puerto ${3000}`);
   console.log(`El nombre de la app es ${app.get('appName')}`);
 }
