@@ -3,13 +3,15 @@ const bodyParser = require('body-parser'),
   morgan = require('morgan'),
   mongoose = require('mongoose'),
   app = express(),
-  port = 3000,
+  eviromentConfig = require('dotenv').config(),
+  port = Number(eviromentConfig.parsed.PORT),
   public = require('./public/public.route'),
   api = require('./api/api.route');
 
 let db = mongoose.connection,
-  dburl = 'mongodb://heroku_3s9zh696:4fuan1boe5l2ah0dn7iqs8kp9s@ds121455.mlab.com:21455/heroku_3s9zh696';
+  dburl = eviromentConfig.parsed.MONGODB_URI;
 
+mongoose.set('useCreateIndex', true)
 mongoose.connect(dburl, {
   useNewUrlParser: true
 });
