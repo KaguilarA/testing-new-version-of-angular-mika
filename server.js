@@ -1,4 +1,4 @@
-const 
+const bodyParser = require('body-parser'),
   express = require('express'),
   morgan = require('morgan'),
   mongoose = require('mongoose'),
@@ -46,10 +46,10 @@ app.use('/vendor', express.static(__dirname + '/node_modules/angular-filepicker/
 
 app.use(morgan(`dev`));
 
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({
-//   extended: false
-// }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(morgan('dev'));
 
 app.use((req, res, next) => {
