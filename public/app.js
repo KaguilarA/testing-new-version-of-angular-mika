@@ -15,7 +15,7 @@
           },
           {
             name: 'LoginController',
-            files: ['/components/logIn/logIn.controller.js']
+            files: ['/components/login/login.controller.js']
           },
           {
             name: 'StudentRequestController',
