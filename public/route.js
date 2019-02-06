@@ -25,7 +25,7 @@
 
       .state('iniciarSesion', {
         url: '/logIn',
-        templateUrl: '/components/logIn/logIn.view.html',
+        templateUrl: '/components/login/login.view.html',
         data: {
           pageTitle: 'Cenfotec Software House | Iniciar Sesión'
         },
