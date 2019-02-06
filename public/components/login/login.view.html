@@ -6,7 +6,7 @@
         <strong>Volver</strong>
       </a>
       <div class="mx-auto my-8">
-        <img src="../../../../sources/img/cshlogo.png">
+        <img src="../../../../sources/img/cshLogo.png">
       </div>
     </div>
   </section>
@@ -15,7 +15,8 @@
       <h1 id="tituloPrincipal" class="text-center mt-1">Inicio de sesión</h1>
       <p class="text-muted text-center texto-descripcion">Ingrese sus datos para continuar</p>
     </div>
-    <form class="col-md-7 mx-auto mt-4" ng-submit="vm.inicioSesion(vm.datos)" name="formInicioSesion" novalidate autocomplete="off">
+    <form class="col-md-7 mx-auto mt-4" ng-submit="vm.inicioSesion(vm.datos)" name="formInicioSesion" novalidate
+      autocomplete="off">
       <div class="form-group">
         <label for="txtcorreo">Correo electrónico</label>
         <input type="correo" id="txtcorreo" class="form-control" name="campocorreo" ng-model="vm.datos.email" required>
