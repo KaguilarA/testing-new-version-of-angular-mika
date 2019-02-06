@@ -11,27 +11,27 @@
       $ocLazyLoadProvider.config({
         modules: [{
             name: 'LandignController',
-            files: ['public/components/landingPage/landingPage.controller.js']
+            files: ['/components/landingPage/landingPage.controller.js']
           },
           {
             name: 'LoginController',
-            files: ['public/components/logIn/logIn.controller.js']
+            files: ['/components/logIn/logIn.controller.js']
           },
           {
             name: 'StudentRequestController',
-            files: ['public/components/users/students/request/request.controller.js']
+            files: ['/components/users/students/request/request.controller.js']
           },
           {
             name: 'MainController',
-            files: ['public/components/main/main.controller.js']
+            files: ['/components/main/main.controller.js']
           },
           {
             name: 'ViewProfileController',
-            files: ['public/components/users/profile/profile.controller.js']
+            files: ['/components/users/profile/profile.controller.js']
           },
           {
             name: 'RegisterCarrerController',
-            files: ['public/components/carrers/register/register.controller.js']
+            files: ['/components/carrers/register/register.controller.js']
           }
         ],
       });
