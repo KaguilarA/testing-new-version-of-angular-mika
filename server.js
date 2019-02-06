@@ -43,7 +43,6 @@ app.use('/vendor', express.static(__dirname + '/node_modules/angular-scroll/'));
 app.use('/vendor', express.static(__dirname + '/node_modules/ng-file-upload/dist/'));
 app.use('/vendor', express.static(__dirname + '/node_modules/angular-animate/'));
 app.use('/vendor', express.static(__dirname + '/node_modules/angular-filepicker/dist/'));
-app.use('/components', express.static(__dirname + './public/components/'));
 
 app.use(morgan(`dev`));
 

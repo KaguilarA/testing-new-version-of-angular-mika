@@ -16,7 +16,7 @@
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('/components/landingPage/landingPage.controller.js');
+            return $ocLazyLoad.load('LandignController');
           }]
         },
         controller: 'landingPageController',
@@ -31,7 +31,7 @@
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('/components/logIn/logIn.controller.js');
+            return $ocLazyLoad.load('LoginController');
           }]
         },
         controller: 'logInController',
@@ -46,7 +46,7 @@
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('/components/users/students/request/request.controller.js');
+            return $ocLazyLoad.load('StudentRequestController');
           }]
         },
         controller: 'studentRequestController',
@@ -58,7 +58,7 @@
         templateUrl: '/components/main/main.view.html',
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('/components/main/main.controller.js');
+            return $ocLazyLoad.load('MainController');
           }]
         },
         controller: 'mainController',
@@ -73,7 +73,7 @@
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('/components/main/main.controller.js');
+            return $ocLazyLoad.load('MainController');
           }]
         },
         controller: 'mainController',
@@ -88,7 +88,7 @@
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('/components/users/profile/profile.controller.js');
+            return $ocLazyLoad.load('ViewProfileController');
           }]
         },
         controller: 'profileController',
@@ -103,7 +103,7 @@
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('/components/carrers/register/register.controller.js');
+            return $ocLazyLoad.load('RegisterCarrerController');
           }]
         },
         controller: 'carrerRegisterController',
