@@ -9,7 +9,7 @@
   function carrerService($http, $q, $log) {
     const carrerAPI = {
       addCarrer: _addCarrer,
-      getCarrer: _getCarrer,
+      getCarrers: _getCarrers,
       updateCarrer: _updateCarrer
     };
     return carrerAPI;
@@ -45,36 +45,22 @@
       return response;
     }
 
-    function _getCarrer() {
-      let carrerListTemp = [],
+    function _getCarrers() {
+      let deferred = $q.defer(),
         carrerList = [];
 
-      let request = $.ajax({
-        url: 'http://localhost:4000/api/get_all_carrers',
-        type: 'get',
-        contentType: 'aplication/x-www-form-urlencoded;charset=utf-8',
-        dataType: 'json',
-        async: false,
-        data: {}
+      $http.get('/api/get_all_carrers').then((res) => {
+        if (res.data != []) {
+          res.data.forEach(obj => {
+            let tempCarrer = Object.assign(new Carrer(), obj);
+            carrerList.push(tempCarrer);
+          });
+        }
+        deferred.resolve(carrerList);
       });
 
-      request.done((carrersDB) => {
-        carrerListTemp = carrersDB;
-      })
-      request.fail(() => {
-        carrerListTemp = [];
-        console.log('Ocurrió un error');
-      });
+      return deferred.promise;
 
-      if (carrerListTemp != []) {
-        carrerListTemp.forEach(obj => {
-          let tempCarrer = Object.assign(new Carrer(), obj);
-          carrerList.push(tempCarrer);
-
-        });
-      }
-
-      return carrerList;
     }
 
     function _updateCarrer(pedituser) {}

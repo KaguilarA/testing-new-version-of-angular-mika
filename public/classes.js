@@ -1,44 +1,201 @@
-class Carrer{
-  constructor(pcarrername, pcarrercode, pcarrerdegree, pcarrerstate){
-    this.carrerName = pcarrername;
-    this.carrerCode = pcarrercode;
-    this.carrerDegree = pcarrerdegree;
-    this.carrerState = pcarrerstate;
-  }
-  
-  // Getter
-  getCarrerName(){
-    return this.carrerName;
+class Carrer {
+  constructor(pcarrername, pcarrercode, pcarrerdegree, pcarrerstate) {
+    this._name = pcarrername;
+    this._code = pcarrercode;
+    this._degree = pcarrerdegree;
+    this._state = pcarrerstate;
   }
 
-  getCarrerCode(){
-    return this.carrerCode
+  // Getters
+
+  get code() {
+    return this._code;
   }
 
-  getCarrerDegree(){
-    return this.carrerDegree;
+  get degree() {
+    return this._degree;
   }
 
-  getCarrerState(){
-    return this.carrerState;
+  get id() {
+    return this._id;
   }
 
-  // Setter
-  setCarrerName(pnewcarrername){
-    this.carrerName = pnewcarrername;
+  get name() {
+    return this._name;
   }
 
-  setCarrerDegree(pnewcarrerdegree){
-    this.carrerDegree = pnewcarrerdegree;
+  get state() {
+    return this._state;
   }
 
-  setCarrerState(pnewcarrerstate){
-    this.carrerState = pnewcarrerstate;
+  // Setters
+
+  set code(pNewCode) {
+    this._code = pNewCode;
+  }
+
+  set degree(pNewDegree) {
+    this._degree = pNewId;
+  }
+
+  set id(pNewId) {
+    this._id = pNewId;
+  }
+
+  set name(pNewName) {
+    this._name = pNewName;
+  }
+
+  set state(pNewState) {
+    this._state = pNewState;
+  }
+}
+
+class User {
+  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate) {
+    this._role = prole;
+    this._name1 = pfirstname;
+    this._name2 = psecondname;
+    this._surname1 = pfirstsurname;
+    this._surname2 = psecondsurname;
+    this._userId = pid;
+    this._email = pemail;
+    this._password = ppassword;
+    this._photo = pphoto;
+    this._phone = pphone;
+    this._state = pstate;
+  }
+
+  // Getters
+
+  get email() {
+    return this._email;
+  }
+
+  get firstName() {
+    return this._name1;
+  }
+
+  get firstSurname() {
+    return this._surname1;
+  }
+
+  get fullName() {
+    let fullName;
+    switch (true) {
+      case this.secondName == ``:
+        fullName = `${this.firstName} ${this.firstSurname} ${this.secondSurname}`;
+        break;
+
+      case this.secondSurname == ``:
+        fullName = `${this.firstName} ${this.secondName} ${this.firstSurname}`;
+        break;
+
+      default:
+        fullName = `${this.firstName} ${this.secondName} ${this.firstSurname} ${this.secondSurname}`;
+        break;
+    }
+    return fullName;
+  }
+
+  get mId() {
+    return this._id;
+  }
+
+  get password() {
+    return this._password;
+  }
+
+  get phone() {
+    return this._phone;
+  }
+
+  get photo() {
+    return this._photo;
+  }
+
+  get role() {
+    return this._role;
+  }
+
+  get secondName() {
+    return this._name2;
+  }
+
+  get secondSurname() {
+    return this._surname2;
+  }
+
+  get state() {
+    return this._state;
+  }
+
+  get id() {
+    return this._userId;
+  }
+
+  // Setters
+
+  set firstName(pNewFirstName) {
+    this._name1 = pNewFirstName;
+  }
+
+  set firstSurname(pNewFirstSurname) {
+    this._surname1 = pNewFirstSurname;
+  }
+
+  set password(pNewPassWord) {
+    this._password = pNewPassWord;
+  }
+
+  set phone(pNewPhone) {
+    this._phone = pNewPhone;
+  }
+
+  set photo(pNewPhoto) {
+    this._photo = pNewPhoto;
+  }
+
+  set role(pNewRole) {
+    this._role = pNewRole;
+  }
+
+  set secondName(pNewSecondName) {
+    this._name2 = pNewSecondName;
+  }
+
+  set secondSurname(pNewSecondSurname) {
+    this._surname2 = pNewSecondSurname;
+  }
+
+  set state(pNewState) {
+    this._state = pNewState;
+  }
+
+  set id(pNewId) {
+    this._userId = pNewId;
+  }
+}
+
+class Admin extends User {
+  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate, pjob) {
+    super(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate);
+    this._jobPosition = pjob;
+  };
+
+  // Getters
+  get jobPosition() {
+    return this._jobPosition;
+  }
+
+  // Setters
+  set jobPosition(pnewjobposition) {
+    this._jobPosition = pnewjobposition;
   }
 }
 
 class Project {
-  constructor(pid, pprojectstate, pprojectname, pobjetive, pimages, pmoney, pprojectmanager, pclient){
+  constructor(pid, pprojectstate, pprojectname, pobjetive, pimages, pmoney, pprojectmanager, pclient) {
     this._id = pid;
     this.projectState = pprojectstate;
     this.projectName = pprojectname;
@@ -51,18 +208,18 @@ class Project {
     this.professor = '';
   };
 
-  setTeacher(pobjprofesor){
+  setTeacher(pobjprofesor) {
     this.professor = pobjprofesor;
   }
 
-  setStudents(pobjstudent){
+  setStudents(pobjstudent) {
     this.students.push(pobjstudent);
   }
   // TODO Hacer los metodos del Proyecto
 }
 
 class ProjectManager {
-  constructor(pfirstname, psecondname, pfirstsurname, psecondsurname, pemail){
+  constructor(pfirstname, psecondname, pfirstsurname, psecondsurname, pemail) {
     this.pmFirstName = pfirstname;
     this.pmSecondName = psecondname;
     this.pmFirstSurname = pfirstsurname;
@@ -73,7 +230,7 @@ class ProjectManager {
 }
 
 class Client {
-  constructor(penterprisename, penterpriseid, penterpriseidustry){
+  constructor(penterprisename, penterpriseid, penterpriseidustry) {
     this.enterpriseName = penterprisename;
     this.enterpriseId = penterpriseid;
     this.enterpriseIndustry = penterpriseidustry;
@@ -81,110 +238,8 @@ class Client {
   // TODO Hacer los metodos del Cliente
 }
 
-class User {
-  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate){
-    this.role = prole;
-    this.firstName = pfirstname;
-    this.secondName = psecondname;
-    this.firstSurname = pfirstsurname;
-    this.secondSurname = psecondsurname;
-    this.id = pid;
-    this.email = pemail;
-    this.password = ppassword;
-    this.photo = pphoto;
-    this.phone = pphone;
-    this.state = pstate;
-  };
-
-  // Getters
-  getRole(){
-    return this.role;
-  }
-
-  getFirstName(){
-    return this.firstName;
-  }
-
-  getSecondName(){
-    return this.secondName;
-  }
-
-  getFirstSurname(){
-    return this.firstName;
-  }
-
-  getSecondSurname(){
-    return this.secondSurname;
-  }
-
-  getId(){
-    return this.id;
-  }
-
-  getEmail(){
-    return this.email;
-  }
-
-  getPassword(){
-    return this.password;
-  }
-
-  getPhono(){
-    return this.photo;
-  }
-
-  getPhone(){
-    return this.phone;
-  }
-
-  getState(){
-    return this.state;
-  }
-
-  // Setter
-  setRole(pnewrole){
-    this.role = pnewrole;
-  }
-
-  setFirstName(pnewfirstname){
-    this.firstName = pnewfirstname;
-  }
-
-  setSecondName(pnewsecondname){
-    this.secondName = pnewsecondname;
-  }
-
-  setFirstSurname(pnewfirstsurname){
-    this.firstName = pnewfirstsurname;
-  }
-
-  setSecondSurname(pnewsecondsurname){
-    this.secondSurname = pnewsecondsurname;
-  }
-
-  setId(pnewid){
-    this.id = pnewid;
-  }
-
-  setPassword(pnewpassword){
-    this.password = pnewpassword;
-  }
-
-  setPhono(pnewphoto){
-    this.photo = pnewphoto;
-  }
-
-  setPhone(pnewphone){
-    this.phone = pnewphone;
-  }
-
-  setState(pnewstate){
-    this.state = pnewstate;
-  }
-}
-
-class Admin extends User{
-  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate, pjob){
+class Assistant extends User {
+  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate, pjob) {
     super(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate);
     this.jobPosition = pjob;
   };
@@ -200,44 +255,27 @@ class Admin extends User{
   }
 }
 
-class Assistant extends User{
-  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate, pjob){
-    super(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate);
-    this.jobPosition = pjob;
-  };
-
-  // Getters
-  getJobPosition() {
-    return this.jobPosition;
-  }
-
-  // Setters
-  setJobPosition(pnewjobposition) {
-    this.jobPosition = pnewjobposition;
-  }
-}
-
-class Professor extends User{
-  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate, pmember, pspecialty){
+class Professor extends User {
+  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate, pmember, pspecialty) {
     super(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate);
     this.specialty = pspecialty;
     this.councilMember = pmember;
   };
 
   // Getters
-  getSpecialty(){
+  getSpecialty() {
     return this.specialty;
   }
 
-  getCouncilMember(){
+  getCouncilMember() {
     return this.councilMember;
   }
 
   // TODO Hacer los sets del Profesor
 }
 
-class Student extends User{
-  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate, pbirthdate, pcurriculum, pcarrer, pgithubuser, pwebsite){
+class Student extends User {
+  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate, pbirthdate, pcurriculum, pcarrer, pgithubuser, pwebsite) {
     super(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate);
     this.birthDate = pbirthdate;
     this.curriculum = pcurriculum;
@@ -248,30 +286,28 @@ class Student extends User{
   };
 
   // Getters
-  getBirthDate(){
+  getBirthDate() {
     return this.birthDate;
   }
 
-  getCurriculum(){
+  getCurriculum() {
     return this.curriculum;
   }
 
-  getCarrer(){
+  getCarrer() {
     return this.carrer;
   }
 
-  getGithubUser(){
+  getGithubUser() {
     return this.githubUser;
   }
 
-  getWebSite(){
+  getWebSite() {
     return this.website;
   }
 
-  getRejecReason(){
+  getRejecReason() {
     return this.rejectReason;
   }
   // TODO Hacer los sets del Estudiante
 }
-
-

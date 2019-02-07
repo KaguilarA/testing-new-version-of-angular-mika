@@ -4,9 +4,9 @@
     .module('cenfotec-software-house')
     .service('userService', userService);
 
-  userService.$inject = ['$http', '$q', '$log'];
+  userService.$inject = ['$http', '$q', '$log', 'dataStorageFactory'];
 
-  function userService($http, $q, $log) {
+  function userService($http, $q, $log, dataStorageFactory) {
     const userAPI = {
       addUser: _addUser,
       getUsers: _getUsers,
@@ -119,59 +119,43 @@
     }
 
     function _getUsers() {
-      let userListTem = [],
-        userList = [];
+      let callback = (res) => {
+          if (res.data != []) {
+            res.data.forEach((obj) => {
+              switch (obj._role) {
+                case "admin":
+                  let tempAdmin = Object.assign(new Admin(), obj);
+                  data.push(tempAdmin);
+                  break;
 
-      let request = $.ajax({
-        url: 'http://localhost:4000/api/get_all_users',
-        type: 'get',
-        contentType: 'aplication/x-www-form-urlencoded;charset=utf-8',
-        dataType: 'json',
-        async: false,
-        data: {}
-      });
+                case "assistant":
+                  let tempAssistan = Object.assign(new Assistant(), obj);
+                  data.push(tempAssistan);
+                  break;
 
-      request.done((userListBD) => {
-        userListTem = userListBD;
-      })
-      request.fail(() => {
-        userListTem = [];
-        console.log('Ocurrió un error');
-      });
+                case "professor":
+                  let tempProfessor = Object.assign(new Professor(), obj);
+                  data.push(tempProfessor);
+                  break;
 
-      if (userListTem != []) {
-        userListTem.forEach(obj => {
-          switch (obj.role) {
-            case "admin":
-              let tempAdmin = Object.assign(new Admin(), obj);
-              userList.push(tempAdmin);
-              break;
+                case "student":
+                  let tempStudent = Object.assign(new Student(), obj);
+                  data.push(tempStudent);
+                  break;
 
-            case "assistant":
-              let tempAssistan = Object.assign(new Assistant(), obj);
-              userList.push(tempAssistan);
-              break;
+                default:
+                  let tempUser = Object.assign(new User(), obj);
+                  data.push(tempUser);
+                  break;
+              }
+            });
+          };
+        },
+        finished = dataStorageFactory.get('/api/get_all_users', callback);
 
-            case "professor":
-              let tempProfessor = Object.assign(new Professor(), obj);
-              userList.push(tempProfessor);
-              break;
-
-            case "student":
-              let tempStudent = Object.assign(new Student(), obj);
-              userList.push(tempStudent);
-              break;
-
-            default:
-              let tempUser = Object.assign(new User(), obj);
-              userList.push(tempUser);
-              break;
-          }
-        });
-      }
-
-      return userList;
+      return finished;
     }
+
 
     function _updateUser(pedituser) {}
 

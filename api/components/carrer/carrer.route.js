@@ -1,6 +1,6 @@
 const express = require('express'),
   router = express.Router(),
-  carrers = require('./carrer.model');
+  carrers = require('./carrer.api');
 
 router.param('id', (req, res, next, id) => {
   req.body.id = id;

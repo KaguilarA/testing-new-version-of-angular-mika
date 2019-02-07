@@ -1,21 +1,21 @@
 const mongoose = require('mongoose');
 
 var carrerSchema = new mongoose.Schema({
-  carrerName: {
+  _name: {
     type: String,
     required: true
   },
-  carrerCode: {
+  _code: {
     type: String,
     required: true,
     unique: true
   },
-  carrerDegree: {
+  _degree: {
     type: String,
     required: true
   },
-  carrerState: {
-    type: String,
+  _state: {
+    type: Boolean,
     required: true
   },
 });

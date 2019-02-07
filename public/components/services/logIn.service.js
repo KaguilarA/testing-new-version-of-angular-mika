@@ -4,9 +4,9 @@
     .module('cenfotec-software-house')
     .service('logInService', logInService);
 
-  logInService.$inject = ['AUTH_EVENTS', 'USER_ROLES', 'userService']
+  logInService.$inject = ['AUTH_EVENTS', 'USER_ROLES', 'userService', 'dataStorageFactory']
 
-  function logInService(AUTH_EVENTS, USER_ROLES, userService) {
+  function logInService(AUTH_EVENTS, USER_ROLES, userService, dataStorageFactory) {
     const loginAPI = {
       logIn: _logIn,
       logOut: _logOut,
@@ -15,50 +15,34 @@
     return loginAPI;
 
     function _logIn(pcredentials) {
-      let response,
-        condition;
-      let request = $.ajax({
-        url: 'http://localhost:4000/api/login',
-        type: 'put',
-        contentType: 'application/x-www-form-urlencoded; charset=utf-8',
-        dataType: 'json',
-        async: false,
-        data: {
-          'email': pcredentials.email,
-          'password': pcredentials.password
-        }
-      });
-      request.done((res) => {
-        response = res;
-        console.log(res);
-      });
+      let callback = (res) => {
+          if (res.data.condition == "0") {
+            condition = res.data;
+            setsession(condition);
+          }
+          deferred.resolve(condition);
+        },
+        finished = dataStorageFactory.put('/api/login', pcredentials, callback);
 
-      request.fail((error) => {
-        response = error;
-        console.log(response.error);
-      });
-      if (response.condition == "0") {
-        setsession(response);
-      }
-
-      return response.condition;
+      return finished;
+      
     }
 
     function _logOut() {
       let response = true;
-      sessionStorage.removeItem('session');
+      dataStorageFactory.removeItem('session');
       return response;
     }
 
     function _getAuthUser() {
-      let credentials = JSON.parse(sessionStorage.getItem('session')),
+      let credentials = JSON.parse(dataStorageFactory.getItem('session')),
         userList = userService.getUsers(),
         userData;
-      if(!credentials){
+      if (!credentials) {
         userData = undefined;
-      }else{
+      } else {
         for (let i = 0; i < userList.length; i++) {
-          if(userList[i].getEmail() == credentials.email){
+          if (userList[i].email == credentials.email) {
             userData = userList[i];
           }
         }
@@ -67,7 +51,7 @@
     };
 
     function setsession(response) {
-      sessionStorage.setItem('session', JSON.stringify({
+      dataStorageFactory.setItem('session', JSON.stringify({
         email: response.email,
         role: response.role
       }));

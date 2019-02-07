@@ -4,10 +4,25 @@
     .module('cenfotec-software-house')
     .controller('studentRequestController', studentRequestController);
 
-  studentRequestController.$inject = ['Upload', 'imageUploadService', 'userService'];
+  studentRequestController.$inject = ['Upload', 'imageUploadService', 'userService', 'carrerService'];
 
-  function studentRequestController(Upload, imageUploadService, userService) {
+  function studentRequestController(Upload, imageUploadService, userService, carrerService) {
     const vm = this;
+
+    vm.carrers = [];
+
+    vm.getCarrers = () => {
+      carrerService.getCarrers().then((res) => {
+        vm.carrers = res;
+        vm.createSelect();
+      });
+    }
+
+    vm.createSelect = () => {
+      console.log('vm.carrers: ', vm.carrers);
+    }
+
+    vm.getCarrers();
 
     vm.newStudent = {
       state: 'postulate',

@@ -43,28 +43,30 @@ module.exports.logIn = (req, res, next) => {
     password = req.body.password;
 
   userSchema.findOne({
-    email: email
+    _email: email
   }, (err, user) => {
     if (err) throw err;
 
     if (user) {
       user.comparePassword(password, (err, isMatch) => {
-        if (err) console.log(err);
+        if (err) {
+          console.log(err)
+        };
         if (!isMatch) {
-          console.log('Attempt failed to login with: ' + user.email);
+          console.log('Attempt failed to login with: ' + user._email);
           res.json({
             "error": "Contraseña no coincide, intente nuevamente",
             "condition": "4"
           });
         } else {
           console.log('Password ' + password + ': ', isMatch);
-          switch (user.state) {
+          switch (user._state) {
             case "eligible":
             case "active":
             case "inactive":
               res.json({
-                "email": user.email,
-                "role": user.role,
+                "email": user._email,
+                "role": user._role,
                 "condition": "0"
               });
               break;

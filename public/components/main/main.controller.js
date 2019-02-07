@@ -9,17 +9,25 @@
   function mainController($state, loginService) {
     const vm = this;
 
-    const userAuth = loginService.getAuthUser();
+    vm.userAuth = {}
+
+    vm.loadUserData = () => {
+      loginService.getAuthUser().then((res) => {
+        vm.userAuth = res;
+        console.log('vm.userAuth: ', vm.userAuth);
+      });;
+    }
 
 
-    if (!userAuth) {
+    vm.loadUserData();
+
+
+    if (!vm.userAuth) {
       $state.go('iniciarSesion');
     }
 
-    vm.user = userAuth;
+    vm.user = vm.userAuth;
 
-    console.log(userAuth);
-
-    vm.userName = userAuth.getFirstName();
+    vm.userName = vm.user.firstName;
   }
 })();

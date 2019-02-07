@@ -6,57 +6,58 @@ const mongoose = require('mongoose'),
 
 
 var userSchema = new mongoose.Schema({
-  role: {
+  _role: {
     type: String,
     required: true,
     em: roles
   },
-  firstName: {
+  _name1: {
     type: String,
     required: true
   },
-  secondName: {
-    type: String
+  _name2: {
+    type: String,
+    default: ''
   },
-  firstSurname: {
+  _surname1: {
     type: String,
     required: true
   },
-  secondSurname: {
+  _surname2: {
     type: String,
     required: true
   },
-  id: {
+  _userId: {
     type: String,
     required: true,
     minlength: 9,
     maxlength: 9
   },
-  email: {
+  _email: {
     type: String,
     required: true,
     unique: true
   },
-  password: {
+  _password: {
     type: String,
     required: true
   },
-  photo: {
+  _photo: {
     type: String,
     required: true
   },
-  phone: {
+  _phone: {
     type: String,
     minlength: 8,
     maxlength: 8
   },
-  state: {
+  _state: {
     type: String,
     required: true,
     em: states
   },
   //Admin and assitant olny
-  jobPosition: {
+  _jobPosition: {
     type: String
   },
   //Professor only
@@ -73,8 +74,9 @@ var userSchema = new mongoose.Schema({
   curriculum: {
     type: String
   },
-  carrer: {
-    type: String
+  _carrer: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Carrer'
   },
   githubUser: {
     type: String
@@ -90,20 +92,20 @@ var userSchema = new mongoose.Schema({
 
 userSchema.pre('save', function (next) {
   var user = this;
-  if (!user.isModified('password')) return next();
+  if (!S.isModified('password')) return next();
   bcrypt.genSalt(SALT_WORK_FACTOR, function (err, salt) {
     if (err) return next(err);
 
-    bcrypt.hash(user.password, salt, function (err, hash) {
+    bcrypt.hash(user._password, salt, function (err, hash) {
       if (err) return next(err);
-      user.password = hash;
+      user._password = hash;
       next();
     });
   });
 });
 
 userSchema.methods.comparePassword = function (candidatePassword, cb) {
-  bcrypt.compare(candidatePassword, this.password, function (err, isMatch) {
+  bcrypt.compare(candidatePassword, this._password, function (err, isMatch) {
     if (err) return cb(err);
     cb(null, isMatch);
   });
