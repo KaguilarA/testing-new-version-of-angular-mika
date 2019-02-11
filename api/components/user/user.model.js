@@ -27,6 +27,10 @@ var userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  _userIdType: {
+    type: String,
+    required: true
+  },
   _userId: {
     type: String,
     required: true,
@@ -68,7 +72,7 @@ var userSchema = new mongoose.Schema({
     type: String
   },
   //Student only
-  birthDate: {
+  _birthdate: {
     type: Date
   },
   curriculum: {

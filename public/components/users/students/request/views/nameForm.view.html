@@ -1,0 +1,100 @@
+<div class="row">
+  <div class="form-group col-md-3">
+    <label for="txtNombre1">Primer nombre</label>
+    <input type="text" name="campoNombre1" class="form-control" id="txtNombre1" 
+    
+    
+    pattern="[ñáéíóúÁÉÍÓÚÑA-Za-z ]+"
+      ng-model="vm.newStudent._name1" required>
+    <div ng-messages="formSolocitudEstudiante.campoNombre1.$error" role="alert">
+      <div ng-message="required">
+        <small class="form-text text-warning">Este campo es requerido</small>
+      </div>
+      <div ng-message="pattern">
+        <small class="form-text text-muted">Formato incorrecto, ingrese únicamente letras</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group col-md-3">
+    <label for="txtNombre2">Segundo nombre</label>
+    <input type="text" name="campoNombre2" class="form-control" id="txtNombre2" pattern="[ñáéíóúÁÉÍÓÚÑA-Za-z ]+"
+      ng-model="vm.newStudent._name2">
+    <div ng-messages="formSolocitudEstudiante.campoNombre2.$error" role="alert">
+      <div ng-message="pattern">
+        <small class="form-text text-muted">Formato incorrecto, ingrese únicamente letras</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group col-md-3">
+    <label for="txtApellido1">Primer apellido</label>
+    <input type="text" name="campoApellido1" class="form-control" id="txtApellido1" pattern="[ñáéíóúÁÉÍÓÚÑA-Za-z ]+"
+      ng-model="vm.newStudent._surname1" required>
+    <div ng-messages="formSolocitudEstudiante.campoApellido1.$error" role="alert">
+      <div ng-message="required">
+        <small class="form-text text-warning">Este campo es requerido</small>
+      </div>
+      <div ng-message="pattern">
+        <small class="form-text text-muted">Formato incorrecto, ingrese únicamente letras</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group col-md-3">
+    <label for="txtApellido2">Segundo apellido</label>
+    <input type="text" name="campoApellido2" class="form-control" id="txtApellido2" pattern="[ñáéíóúÁÉÍÓÚÑA-Za-z ]+"
+      ng-model="vm.newStudent._surname2" required>
+    <div ng-messages="formSolocitudEstudiante.campoApellido2.$error" role="alert">
+      <div ng-message="required">
+        <small class="form-text text-warning">Este campo es requerido</small>
+      </div>
+      <div ng-message="pattern">
+        <small class="form-text text-muted">Formato incorrecto, ingrese únicamente letras</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="form-group col-md-4">
+    <label for="dteFechaNac">Fecha de nacimiento</label>
+    <input type="date" name="campoFechaNacimiento" class="form-control" id="dteFechaNac" ng-model="vm.newStudent.birthDate"
+      required>
+  </div>
+
+  <div class="form-group col-md-4">
+    <label for="txtTipoId">Tipo de identificación</label>
+    <select ng-model="vm.newStudent._userIdType" name="campoTipoId" class="form-control" id="sltTypeId" ng-options="type as type.name for type in vm.typesId track by type.id"
+      required>
+      <option value="">--Elige opcion--</option>
+    </select>
+  </div>
+
+  <div class="form-group col-md-4">
+    <label for="txtCedula">Número de identificación</label>
+    <input type="text" name="campoCedula" class="form-control" id="txtCedula" ng-disabled="vm.newStudent._userIdType.pattern == undefined"
+      ng-pattern="vm.newStudent._userIdType.pattern" ng-model="vm.newStudent.id" required>
+    <div ng-messages="formSolocitudEstudiante.campoCedula.$error" role="alert">
+      <div ng-message="required">
+        <small class="form-text text-warning">Este campo es requerido</small>
+      </div>
+      <div ng-message="ng-pattern">
+        <small class="form-text text-muted">Formato incorrecto</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- <div class="form-group row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <a ui-sref="form.interests" class="btn btn-block btn-info">
+      Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+  </div>
+</div> -->

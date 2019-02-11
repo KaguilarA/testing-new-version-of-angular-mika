@@ -1,22 +1,67 @@
 @import '../../../settings';
+
 #sendRequestStudentComponent {
   max-width: 100% !important;
-  .imageSection {
-    .link {
-      font-size: 1.2rem;
-    }
-    #imagen {
-      background-image: url(./img/fondo1.png), $overlay-gradient;
-      background-blend-mode: overlay;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 100vh;
-      .my-8 {
-        margin: 17.5rem 0;
-      }
-      .ml-8{
-        margin-left: 10.5rem;
-      }
-    }
-  }
+  background: #2f2f2f;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+// #sendRequestStudentComponent {
+//   
+
+//   .imageSection {
+//     .link {
+//       font-size: 1.2rem;
+//     }
+
+//     #imagen {
+//       background-image: url(./img/fondo1.png), $overlay-gradient;
+//       background-blend-mode: overlay;
+//       background-repeat: no-repeat;
+//       background-size: cover;
+//       height: 100vh;
+
+//       .my-8 {
+//         margin: 17.5rem 0;
+//       }
+
+//       .ml-8 {
+//         margin-left: 10.5rem;
+//       }
+//     }
+//   }
+// }
+
+#signup-form {
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+  padding: 30px;
+}
+
+/* basic styling for entering and leaving */
+/* left and right added to ensure full width */
+#form-views.ng-enter,
+#form-views.ng-leave {
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+}
+
+/* enter animation */
+#form-views.ng-enter {
+  -webkit-animation: slideInRight 0.5s both ease;
+  -moz-animation: slideInRight 0.5s both ease;
+  animation: slideInRight 0.5s both ease;
+}
+
+/* leave animation */
+#form-views.ng-leave {
+  -webkit-animation: slideOutLeft 0.5s both ease;
+  -moz-animation: slideOutLeft 0.5s both ease;
+  animation: slideOutLeft 0.5s both ease;
 }

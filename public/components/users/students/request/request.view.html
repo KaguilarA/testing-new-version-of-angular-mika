@@ -1,4 +1,46 @@
 <main class="row" id="sendRequestStudentComponent">
+  <div class="col-md-3 mt-3">
+    <a href="" ui-sref="landingPage" class="link ml-5">
+      <i class="fas fa-chevron-left"></i>
+      <strong>Volver</strong>
+    </a>
+  </div>
+  <div class="col-8 offset-2">
+    <div id="form-container mt-5">
+
+      <div class="page-header text-center mt-5">
+        <h2>Enviar solicitud de registro a Cenfotec Software House</h2>
+        <nav id="status-buttons" class="nav nav-pills nav-fill my-5">
+          <a class="nav-item nav-link" ui-sref-active="active" ui-sref=".informacionBasica">
+            <h6 class="d-inline">Información Básica</h6>
+          </a>
+          <a class="nav-item nav-link" ui-sref-active="active" ui-sref=".informacionCarrera">
+            <h6 class="d-inline">Información de carrera</h6>
+          </a>
+          <a class="nav-item nav-link" ui-sref-active="active" ui-sref=".informacionOpcional">
+            <h6 class="d-inline">Información adicional</h6>
+          </a>
+          <!-- <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
+        </nav>
+      </div>
+
+      <!-- use ng-submit to catch the form submission and use our Angular function -->
+      <form ng-submit="vm.preSendRequest(vm.newStudent)" id="form-views" class="mt-4" name="formSolocitudEstudiante"
+        novalidate autocomplete="off">
+        <div ui-view></div>
+      </form>
+
+    </div>
+
+    <!-- show our formData as it is being typed -->
+    <pre>
+        {{ vm.newStudent }}
+      </pre>
+
+  </div>
+</main>
+
+<!-- <main class="row" id="sendRequestStudentComponent">
   <section class="col-md-6 imageSection">
     <div class="row" id="imagen">
       <a href="" ui-sref="landingPage" class="text-white link mt-5 ml-5">
@@ -14,156 +56,7 @@
     <div class="mt-5 d-none" id="loading">
       <img src="../../../../sources/img/loading.gif" alt="">
     </div>
-    <form ng-submit="vm.preSendRequest(vm.newStudent)" id="sendRequestFormStudent" name="formSolocitudEstudiante"
-      novalidate autocomplete="off">
-
-      <div class="row">
-        <div class="form-group col-md-6">
-          <label for="txtNombre1">Primer nombre</label>
-          <input type="text" name="campoNombre1" class="form-control" id="txtNombre1" pattern="[ñáéíóúÁÉÍÓÚÑA-Za-z ]+"
-            ng-model="vm.newStudent.firstName" required>
-          <div ng-messages="formSolocitudEstudiante.campoNombre1.$error" role="alert">
-            <div ng-message="required">
-              <small class="form-text text-warning">Este campo es requerido</small>
-            </div>
-            <div ng-message="pattern">
-              <small class="form-text text-muted">Formato incorrecto, ingrese únicamente letras</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group col-md-6">
-          <label for="txtNombre2">Segundo nombre</label>
-          <input type="text" name="campoNombre2" class="form-control" id="txtNombre2" pattern="[ñáéíóúÁÉÍÓÚÑA-Za-z ]+"
-            ng-model="vm.newStudent.secondName">
-          <div ng-messages="formSolocitudEstudiante.campoNombre2.$error" role="alert">
-            <div ng-message="pattern">
-              <small class="form-text text-muted">Formato incorrecto, ingrese únicamente letras</small>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="form-group col-md-6">
-          <label for="txtApellido1">Primer apellido</label>
-          <input type="text" name="campoApellido1" class="form-control" id="txtApellido1" pattern="[ñáéíóúÁÉÍÓÚÑA-Za-z ]+"
-            ng-model="vm.newStudent.firstSurname" required>
-          <div ng-messages="formSolocitudEstudiante.campoApellido1.$error" role="alert">
-            <div ng-message="required">
-              <small class="form-text text-warning">Este campo es requerido</small>
-            </div>
-            <div ng-message="pattern">
-              <small class="form-text text-muted">Formato incorrecto, ingrese únicamente letras</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group col-md-6">
-          <label for="txtApellido2">Segundo apellido</label>
-          <input type="text" name="campoApellido2" class="form-control" id="txtApellido2" pattern="[ñáéíóúÁÉÍÓÚÑA-Za-z ]+"
-            ng-model="vm.newStudent.secondSurname" required>
-          <div ng-messages="formSolocitudEstudiante.campoApellido2.$error" role="alert">
-            <div ng-message="required">
-              <small class="form-text text-warning">Este campo es requerido</small>
-            </div>
-            <div ng-message="pattern">
-              <small class="form-text text-muted">Formato incorrecto, ingrese únicamente letras</small>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="form-group col-md-6">
-          <label for="txtCedula">Número de cédula</label>
-          <input type="text" name="campoCedula" class="form-control" id="txtCedula" pattern="[0-9]+" maxlength="9"
-            minlength="9" ng-model="vm.newStudent.id" required>
-          <div ng-messages="formSolocitudEstudiante.campoCedula.$error" role="alert">
-            <div ng-message="required">
-              <small class="form-text text-warning">Este campo es requerido</small>
-            </div>
-            <div ng-message="pattern">
-              <small class="form-text text-muted">Formato incorrecto, ingrese únicamente números</small>
-            </div>
-            <div ng-message="maxlength">
-              <small class="form-text text-muted">Formato incorrecto</small>
-            </div>
-            <div ng-message="minlength">
-              <small class="form-text text-muted">Formato incorrecto</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group col-md-6">
-          <label for="txtEmail">Correo electrónico</label>
-          <input type="email" name="campoEmail" class="form-control" id="txtEmail" pattern="([a-z0-9\.\-\_]+@ucenfotec.ac.cr)"
-            placeholder="ejemplo@ucenfotec.ac.cr" ng-model="vm.newStudent.email" required>
-          <div ng-messages="formSolocitudEstudiante.campoEmail.$error" role="alert">
-            <div ng-message="required">
-              <small class="form-text text-warning">Este campo es requerido</small>
-            </div>
-            <div ng-message="pattern">
-              <small class="form-text text-muted">Formato incorrecto, solo se admiten correos de la Universidad
-                Cenfotec</small>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="form-group col-md-6">
-          <label for="txtTelefono">Teléfono</label>
-          <input type="phone" name="campoTelefono" class="form-control" id="txtTelefono" ng-model="vm.newStudent.phone"
-            required>
-        </div>
-
-        <div class="form-group col-md-6">
-          <label for="filPhoto">Fotografía</label>
-          <input type="file" name="campoFotografia" class="form-control-file" id="filPhoto" files-input ng-model="vm.newStudent.photo"
-            required>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="form-group col-md-6">
-          <label for="dteFechaNac">Fecha de nacimiento</label>
-          <input type="date" name="campoFechaNacimiento" class="form-control" id="dteFechaNac" ng-model="vm.newStudent.birthDate"
-            required>
-        </div>
-
-        <div class="form-group col-md-6">
-          <label for="sltCarrer">Carrera</label>
-          <select ng-model="vm.newStudent.carrer" name="campoCarrera" class="form-control" id="sltCarrer" ng-options="carrer as carrer.name for carrer in vm.carrers track by carrer.id"
-            required>
-            <option value="">--Elige opcion--</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="form-group col-md-12">
-          <label for="filCurriculum">Curriculum vitae</label>
-          <input type="text" name="campoCurriculum" class="form-control" id="filCurriculum" ng-model="vm.newStudent.curriculum"
-            required>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="form-group col-md-6">
-          <label for="txtGithub">Link de Github</label>
-          <input type="text" name="campoGithub" class="form-control" id="txtGithub" ng-model="vm.newStudent.githubUser"
-            required>
-        </div>
-
-        <div class="form-group col-md-6">
-          <label for="txtWebSite">Sitio web del estudiante</label>
-          <input type="text" name="campoWebsite" class="form-control" id="txtWebSite" ng-model="vm.newStudent.website"
-            required>
-        </div>
-      </div>
-
       <button type="submit" class="btn btn-warning">Enviar solicitud</button>
     </form>
   </section>
-</main>
+</main> -->

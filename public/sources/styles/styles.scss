@@ -9,9 +9,8 @@
 // APP STYLES
 // -----------------------------------------------------------------------------
 
-@import 'general.style';
-@import 'components/sidebar.styles';
-@import 'components/landingPage.styles';
-@import 'components/logIn.styles';
-@import 'components/profile.styles';
-@import 'components/users/students/request.styles';
+@import './general.style';
+@import './components/sidebar.styles';
+@import './components/landingPage.styles';
+@import './components/logIn.styles';
+@import './components/profile.styles', './components/users/students/request.styles';

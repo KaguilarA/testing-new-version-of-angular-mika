@@ -44,7 +44,19 @@
       notAuthenticated: 'auth-not-authenticated',
       notAuthorized: 'auth-not-authorized'
     })
-    .constant('USER_ROLES', {
+    .constant(`degreeArray`, [`Técnico superior`, `Diplomado`, `Bachillerato`, `Maestría`])
+    .constant(`typesId`, [{
+        id: 1,
+        name: `Cédula de identidad`,
+        pattern: `^((?!(0))[0-9]{9})$`
+      },
+      {
+        id: 2,
+        name: `Cédula de residencia`,
+        pattern: `^((?!(0))[0-9]{13})$`
+      }
+    ])
+    .constant('userRoles', {
       all: '*',
       admin: 'administrador',
       assistant: 'asistente',

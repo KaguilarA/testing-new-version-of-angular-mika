@@ -53,6 +53,30 @@
         controllerAs: 'vm'
       })
 
+      .state('solicitudEstudiante.informacionBasica', {
+        url: '/informacionBasica',
+        templateUrl: '/components/users/students/request/views/nameForm.view.html',
+        data: {
+          pageTitle: 'Cenfotec Software House | Solicitud de registro'
+        }
+      })
+
+      .state('solicitudEstudiante.informacionCarrera', {
+        url: '/informacionCarrera',
+        templateUrl: '/components/users/students/request/views/carrerForm.view.html',
+        data: {
+          pageTitle: 'Cenfotec Software House | Solicitud de registro'
+        }
+      })
+
+      .state('solicitudEstudiante.informacionOpcional', {
+        url: '/informacionOpcional',
+        templateUrl: '/components/users/students/request/views/optional.view.html',
+        data: {
+          pageTitle: 'Cenfotec Software House | Solicitud de registro'
+        }
+      })
+
       .state('main', {
         url: '/main',
         templateUrl: '/components/main/main.view.html',

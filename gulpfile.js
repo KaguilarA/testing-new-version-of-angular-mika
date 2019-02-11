@@ -6,7 +6,7 @@ const gulp = require('gulp'),
     indexView: `./public/*.pug`,
     components: {
       views: './public/**/**/*.html',
-      styles: './views/styles/**/**/*.scss',
+      styles: './public/sources/styles/**/**/**.scss',
       js: './public/**/**/*.html',
     }
   };
@@ -17,7 +17,7 @@ gulp.task(`connect`, () => {
 
 
 gulp.task('reload', () => {
-  gulp.src([paths.views, paths.styles])
+  gulp.src([paths.components.views, paths.components.styles, paths.components.js])
     .pipe(connect.reload())
   // .pipe(browserSync.stream());
 });
@@ -31,7 +31,7 @@ gulp.task('styles', () => {
 });
 
 gulp.task('watch', () => {
-  gulp.watch([paths.views, paths.styles], ['reload', 'to-do', 'styles'])
+  gulp.watch([paths.components.views, paths.components.styles, paths.components.js], gulp.series(['reload', 'to-do', 'styles'], () => {}))
   // .on('change', browserSync.reload);
 });
 

@@ -4,35 +4,93 @@
   src: url("./fonts/Montserrat_Thin.ttf");
   font-weight: 100;
 }
+
 @font-face {
   font-family: 'montserrat';
   src: url("./fonts/Montserrat_ExtraLight.ttf");
   font-weight: 300;
 }
+
 @font-face {
   font-family: 'montserrat';
   src: url("./fonts/Montserrat_Regular.ttf");
   font-weight: 400;
 }
+
 @font-face {
   font-family: 'montserrat';
   src: url("./fonts/Montserrat_Medium.ttf");
   font-weight: 500;
 }
+
 @font-face {
   font-family: 'montserrat';
   src: url("./fonts/Montserrat_SemiBold.ttf");
   font-weight: 600;
 }
+
 @font-face {
   font-family: 'montserrat';
   src: url("./fonts/Montserrat_Bold.ttf");
   font-weight: 700;
 }
+
 @font-face {
   font-family: 'montserrat';
   src: url("./fonts/Montserrat_Black.ttf");
   font-weight: 900;
+}
+
+// ANIMACIONES
+
+/* slide out to the left */
+@keyframes slideOutLeft {
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+@-moz-keyframes slideOutLeft {
+  to {
+    -moz-transform: translateX(-200%);
+  }
+}
+
+@-webkit-keyframes slideOutLeft {
+  to {
+    -webkit-transform: translateX(-200%);
+  }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+  from {
+    transform: translateX(200%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@-moz-keyframes slideInRight {
+  from {
+    -moz-transform: translateX(200%);
+  }
+
+  to {
+    -moz-transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translateX(200%);
+  }
+
+  to {
+    -webkit-transform: translateX(0);
+  }
 }
 
 // VARIABLES
@@ -41,7 +99,7 @@ $typho: 'montserrat';
 $colorPrimary : rgb(251, 184, 3);
 $backUpOrange : rgb(223, 116, 0);
 $backUpYellow : rgb(255, 225, 0);
-$footer : linear-gradient(-10deg, $black  40%, $black  60%,transparent 60%);
+$footer : linear-gradient(-10deg, $black 40%, $black 60%, transparent 60%);
 $overlay-gradient : linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7));
 $trasparent : rgba(31, 31, 31, 0.0);
 $black : rgb(31, 31, 31);

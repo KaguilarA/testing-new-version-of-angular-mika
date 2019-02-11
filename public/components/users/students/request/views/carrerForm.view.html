@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="form-group col-md-6">
+    <label for="sltCarrer">Carrera</label>
+    <select ng-model="vm.newStudent._carrer" name="campoCarrera" class="form-control" id="sltCarrer" ng-change="vm.fillDegreeArray()"
+      ng-options="carrer as carrer.name for carrer in vm.carrers track by carrer.id" required>
+      <option value="">--Elige opcion--</option>
+    </select>
+  </div>
+
+  <div class="form-group col-md-6">
+    <label for="sltCarrer">Grado de la carrera</label>
+    <select ng-model="vm.newStudent.degree" name="campoCarrera" class="form-control" id="sltCarrer" ng-options="degree for degree in vm.degreeArray"
+      ng-disabled="vm.newStudent._carrer == undefined" required>
+      <option value="">--Elige opcion--</option>
+    </select>
+  </div>
+
+  <div class="form-group col-md-6">
+    <label for="txtEmail">Correo electrónico</label>
+    <input type="email" name="campoEmail" class="form-control" id="txtEmail" pattern="([a-z0-9\.\-\_]+@ucenfotec.ac.cr)"
+      placeholder="ejemplo@ucenfotec.ac.cr" ng-model="vm.newStudent.email" required>
+    <div ng-messages="formSolocitudEstudiante.campoEmail.$error" role="alert">
+      <div ng-message="required">
+        <small class="form-text text-warning">Este campo es requerido</small>
+      </div>
+      <div ng-message="pattern">
+        <small class="form-text text-muted">Formato incorrecto, solo se admiten correos de la Universidad
+          Cenfotec</small>
+      </div>
+    </div>
+  </div>
+</div>

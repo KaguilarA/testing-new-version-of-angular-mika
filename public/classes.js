@@ -52,12 +52,13 @@ class Carrer {
 }
 
 class User {
-  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate) {
+  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, puseridtype, pid, pemail, ppassword, pphoto, pphone, pstate) {
     this._role = prole;
     this._name1 = pfirstname;
     this._name2 = psecondname;
     this._surname1 = pfirstsurname;
     this._surname2 = psecondsurname;
+    this._userIdType = puseridtype;
     this._userId = pid;
     this._email = pemail;
     this._password = ppassword;
@@ -134,6 +135,10 @@ class User {
     return this._userId;
   }
 
+  get userIdType() {
+    return this.__userIdType;
+  }
+
   // Setters
 
   set firstName(pNewFirstName) {
@@ -175,11 +180,15 @@ class User {
   set id(pNewId) {
     this._userId = pNewId;
   }
+
+  set userIdType(pNewUserIdType) {
+    this._userIdType = pNewUserIdType;
+  }
 }
 
 class Admin extends User {
-  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate, pjob) {
-    super(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate);
+  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, puseridtype, pid, pemail, ppassword, pphoto, pphone, pstate) {
+    super(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, puseridtype, pid, pemail, ppassword, pphoto, pphone, pstate);
     this._jobPosition = pjob;
   };
 
@@ -191,6 +200,25 @@ class Admin extends User {
   // Setters
   set jobPosition(pnewjobposition) {
     this._jobPosition = pnewjobposition;
+  }
+}
+
+class Student extends User {
+  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, puseridtype, pid, pemail, ppassword, pphoto, pphone, pstate) {
+    super(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, puseridtype, pid, pemail, ppassword, pphoto, pphone, pstate);
+    this._birthdate = pbirthdate;
+  }
+
+  // Getters
+
+  get birthDate() {
+    return this._birthdate;
+  }
+
+  // Setters
+
+  set birthDate(pNewBirthDate) {
+    this._birthdate = pNewBirthDate;
   }
 }
 
@@ -274,40 +302,40 @@ class Professor extends User {
   // TODO Hacer los sets del Profesor
 }
 
-class Student extends User {
-  constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate, pbirthdate, pcurriculum, pcarrer, pgithubuser, pwebsite) {
-    super(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate);
-    this.birthDate = pbirthdate;
-    this.curriculum = pcurriculum;
-    this.carrer = pcarrer;
-    this.githubUser = pgithubuser;
-    this.website = pwebsite;
-    this.rejectReason = ''
-  };
+// class Student extends User {
+//   constructor(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate, pbirthdate, pcurriculum, pcarrer, pgithubuser, pwebsite) {
+//     super(prole, pfirstname, psecondname, pfirstsurname, psecondsurname, pid, pemail, ppassword, pphoto, pphone, pstate);
+//     this.birthDate = pbirthdate;
+//     this.curriculum = pcurriculum;
+//     this.carrer = pcarrer;
+//     this.githubUser = pgithubuser;
+//     this.website = pwebsite;
+//     this.rejectReason = ''
+//   };
 
-  // Getters
-  getBirthDate() {
-    return this.birthDate;
-  }
+//   // Getters
+//   getBirthDate() {
+//     return this.birthDate;
+//   }
 
-  getCurriculum() {
-    return this.curriculum;
-  }
+//   getCurriculum() {
+//     return this.curriculum;
+//   }
 
-  getCarrer() {
-    return this.carrer;
-  }
+//   getCarrer() {
+//     return this.carrer;
+//   }
 
-  getGithubUser() {
-    return this.githubUser;
-  }
+//   getGithubUser() {
+//     return this.githubUser;
+//   }
 
-  getWebSite() {
-    return this.website;
-  }
+//   getWebSite() {
+//     return this.website;
+//   }
 
-  getRejecReason() {
-    return this.rejectReason;
-  }
-  // TODO Hacer los sets del Estudiante
-}
+//   getRejecReason() {
+//     return this.rejectReason;
+//   }
+//   // TODO Hacer los sets del Estudiante
+// }

@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="form-group col-md-4">
+    <label for="filCurriculum">Curriculum vitae</label>
+    <input type="text" name="campoCurriculum" class="form-control" id="filCurriculum" ng-model="vm.newStudent.curriculum"
+      required>
+  </div>
+
+  <div class="form-group col-md-6">
+    <label for="txtGithub">Link de Github</label>
+    <input type="url" name="campoGithub" class="form-control" id="txtGithub" ng-model="vm.newStudent.githubUser"
+      required>
+  </div>
+
+  <div class="form-group col-md-6">
+    <label for="txtWebSite">Sitio web del estudiante</label>
+    <input type="url" name="campoWebsite" class="form-control" id="txtWebSite" ng-model="vm.newStudent.website"
+      required>
+  </div>
+
+  <div class="form-group col-md-6">
+    <label for="txtTelefono">Teléfono</label>
+    <input type="phone" name="campoTelefono" class="form-control" id="txtTelefono" ng-model="vm.newStudent.phone"
+      required>
+  </div>
+
+  <div class="form-group col-md-6">
+    <label for="filPhoto">Fotografía</label>
+    <input type="file" name="campoFotografia" class="form-control-file" id="filPhoto" files-input ng-model="vm.newStudent.photo"
+      required>
+  </div>
+
+</div>

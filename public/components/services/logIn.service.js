@@ -4,9 +4,9 @@
     .module('cenfotec-software-house')
     .service('logInService', logInService);
 
-  logInService.$inject = ['AUTH_EVENTS', 'USER_ROLES', 'userService', 'dataStorageFactory']
+  logInService.$inject = ['AUTH_EVENTS', 'userRoles', 'userService', 'dataStorageFactory']
 
-  function logInService(AUTH_EVENTS, USER_ROLES, userService, dataStorageFactory) {
+  function logInService(AUTH_EVENTS, userRoles, userService, dataStorageFactory) {
     const loginAPI = {
       logIn: _logIn,
       logOut: _logOut,

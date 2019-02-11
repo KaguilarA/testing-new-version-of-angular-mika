@@ -6956,6 +6956,38 @@ a.text-dark:hover, a.text-dark:focus {
   src: url("./fonts/Montserrat_Black.ttf");
   font-weight: 900; }
 
+/* slide out to the left */
+@keyframes slideOutLeft {
+  to {
+    transform: translateX(-200%); } }
+
+@-moz-keyframes slideOutLeft {
+  to {
+    -moz-transform: translateX(-200%); } }
+
+@-webkit-keyframes slideOutLeft {
+  to {
+    -webkit-transform: translateX(-200%); } }
+
+/* slide in from the right */
+@keyframes slideInRight {
+  from {
+    transform: translateX(200%); }
+  to {
+    transform: translateX(0); } }
+
+@-moz-keyframes slideInRight {
+  from {
+    -moz-transform: translateX(200%); }
+  to {
+    -moz-transform: translateX(0); } }
+
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translateX(200%); }
+  to {
+    -webkit-transform: translateX(0); } }
+
 body {
   background: white;
   font-family: "montserrat" !important; }
@@ -7028,6 +7060,38 @@ body {
   src: url("./fonts/Montserrat_Black.ttf");
   font-weight: 900; }
 
+/* slide out to the left */
+@keyframes slideOutLeft {
+  to {
+    transform: translateX(-200%); } }
+
+@-moz-keyframes slideOutLeft {
+  to {
+    -moz-transform: translateX(-200%); } }
+
+@-webkit-keyframes slideOutLeft {
+  to {
+    -webkit-transform: translateX(-200%); } }
+
+/* slide in from the right */
+@keyframes slideInRight {
+  from {
+    transform: translateX(200%); }
+  to {
+    transform: translateX(0); } }
+
+@-moz-keyframes slideInRight {
+  from {
+    -moz-transform: translateX(200%); }
+  to {
+    -moz-transform: translateX(0); } }
+
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translateX(200%); }
+  to {
+    -webkit-transform: translateX(0); } }
+
 aside {
   height: 100vh; }
   aside a:hover {
@@ -7069,6 +7133,38 @@ aside {
   font-family: 'montserrat';
   src: url("./fonts/Montserrat_Black.ttf");
   font-weight: 900; }
+
+/* slide out to the left */
+@keyframes slideOutLeft {
+  to {
+    transform: translateX(-200%); } }
+
+@-moz-keyframes slideOutLeft {
+  to {
+    -moz-transform: translateX(-200%); } }
+
+@-webkit-keyframes slideOutLeft {
+  to {
+    -webkit-transform: translateX(-200%); } }
+
+/* slide in from the right */
+@keyframes slideInRight {
+  from {
+    transform: translateX(200%); }
+  to {
+    transform: translateX(0); } }
+
+@-moz-keyframes slideInRight {
+  from {
+    -moz-transform: translateX(200%); }
+  to {
+    -moz-transform: translateX(0); } }
+
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translateX(200%); }
+  to {
+    -webkit-transform: translateX(0); } }
 
 #landingPage {
   max-width: 100% !important; }
@@ -7185,6 +7281,38 @@ ul.icons {
   src: url("./fonts/Montserrat_Black.ttf");
   font-weight: 900; }
 
+/* slide out to the left */
+@keyframes slideOutLeft {
+  to {
+    transform: translateX(-200%); } }
+
+@-moz-keyframes slideOutLeft {
+  to {
+    -moz-transform: translateX(-200%); } }
+
+@-webkit-keyframes slideOutLeft {
+  to {
+    -webkit-transform: translateX(-200%); } }
+
+/* slide in from the right */
+@keyframes slideInRight {
+  from {
+    transform: translateX(200%); }
+  to {
+    transform: translateX(0); } }
+
+@-moz-keyframes slideInRight {
+  from {
+    -moz-transform: translateX(200%); }
+  to {
+    -moz-transform: translateX(0); } }
+
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translateX(200%); }
+  to {
+    -webkit-transform: translateX(0); } }
+
 #loginComponent .imageSection {
   padding-left: 0 !important;
   padding-right: 0 !important; }
@@ -7237,6 +7365,38 @@ ul.icons {
   src: url("./fonts/Montserrat_Black.ttf");
   font-weight: 900; }
 
+/* slide out to the left */
+@keyframes slideOutLeft {
+  to {
+    transform: translateX(-200%); } }
+
+@-moz-keyframes slideOutLeft {
+  to {
+    -moz-transform: translateX(-200%); } }
+
+@-webkit-keyframes slideOutLeft {
+  to {
+    -webkit-transform: translateX(-200%); } }
+
+/* slide in from the right */
+@keyframes slideInRight {
+  from {
+    transform: translateX(200%); }
+  to {
+    transform: translateX(0); } }
+
+@-moz-keyframes slideInRight {
+  from {
+    -moz-transform: translateX(200%); }
+  to {
+    -moz-transform: translateX(0); } }
+
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translateX(200%); }
+  to {
+    -webkit-transform: translateX(0); } }
+
 #profileComponent {
   max-width: 100%; }
 
@@ -7275,17 +7435,63 @@ ul.icons {
   src: url("./fonts/Montserrat_Black.ttf");
   font-weight: 900; }
 
-#sendRequestStudentComponent {
-  max-width: 100% !important; }
-  #sendRequestStudentComponent .imageSection .link {
-    font-size: 1.2rem; }
-  #sendRequestStudentComponent .imageSection #imagen {
-    background-image: url(./img/fondo1.png), linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7));
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh; }
-    #sendRequestStudentComponent .imageSection #imagen .my-8 {
-      margin: 17.5rem 0; }
-    #sendRequestStudentComponent .imageSection #imagen .ml-8 {
-      margin-left: 10.5rem; }
+/* slide out to the left */
+@keyframes slideOutLeft {
+  to {
+    transform: translateX(-200%); } }
+
+@-moz-keyframes slideOutLeft {
+  to {
+    -moz-transform: translateX(-200%); } }
+
+@-webkit-keyframes slideOutLeft {
+  to {
+    -webkit-transform: translateX(-200%); } }
+
+/* slide in from the right */
+@keyframes slideInRight {
+  from {
+    transform: translateX(200%); }
+  to {
+    transform: translateX(0); } }
+
+@-moz-keyframes slideInRight {
+  from {
+    -moz-transform: translateX(200%); }
+  to {
+    -moz-transform: translateX(0); } }
+
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translateX(200%); }
+  to {
+    -webkit-transform: translateX(0); } }
+
+#signup-form {
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+  padding: 30px; }
+
+/* basic styling for entering and leaving */
+/* left and right added to ensure full width */
+#form-views.ng-enter,
+#form-views.ng-leave {
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease; }
+
+/* enter animation */
+#form-views.ng-enter {
+  -webkit-animation: slideInRight 0.5s both ease;
+  -moz-animation: slideInRight 0.5s both ease;
+  animation: slideInRight 0.5s both ease; }
+
+/* leave animation */
+#form-views.ng-leave {
+  -webkit-animation: slideOutLeft 0.5s both ease;
+  -moz-animation: slideOutLeft 0.5s both ease;
+  animation: slideOutLeft 0.5s both ease; }
