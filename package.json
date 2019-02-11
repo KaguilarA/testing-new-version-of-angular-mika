@@ -26,7 +26,7 @@
   "bugs": {
     "url": "https://github.com/KaguilarA/testing-new-version-of-angular-mika/issues"
   },
-  "homepage": "https://github.com/KaguilarA/testing-new-version-of-angular-mika#readme",
+  "homepage": "https://cenfotec-software-house.herokuapp.com/#!/",
   "devDependencies": {
     "bcrypt": "^3.0.3",
     "body-parser": "^1.18.3",

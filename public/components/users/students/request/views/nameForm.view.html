@@ -1,10 +1,7 @@
 <div class="row">
   <div class="form-group col-md-3">
     <label for="txtNombre1">Primer nombre</label>
-    <input type="text" name="campoNombre1" class="form-control" id="txtNombre1" 
-    
-    
-    pattern="[ñáéíóúÁÉÍÓÚÑA-Za-z ]+"
+    <input type="text" name="campoNombre1" class="form-control" id="txtNombre1" pattern="[ñáéíóúÁÉÍÓÚÑA-Za-z ]+"
       ng-model="vm.newStudent._name1" required>
     <div ng-messages="formSolocitudEstudiante.campoNombre1.$error" role="alert">
       <div ng-message="required">
