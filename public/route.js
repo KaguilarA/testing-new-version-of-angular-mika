@@ -42,7 +42,7 @@
         url: '/studentRequest',
         templateUrl: '/components/users/students/request/request.view.html',
         data: {
-          pageTitle: 'Cenfotec Software House | Solicitud de registro'
+          pageTitle: 'Solicitud de registro para Cenfotec Software House'
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
@@ -57,7 +57,7 @@
         url: '/informacionBasica',
         templateUrl: '/components/users/students/request/views/nameForm.view.html',
         data: {
-          pageTitle: 'Cenfotec Software House | Solicitud de registro'
+          pageTitle: 'Solicitud de registro para Cenfotec Software House'
         }
       })
 
@@ -65,7 +65,7 @@
         url: '/informacionCarrera',
         templateUrl: '/components/users/students/request/views/carrerForm.view.html',
         data: {
-          pageTitle: 'Cenfotec Software House | Solicitud de registro'
+          pageTitle: 'Solicitud de registro para Cenfotec Software House'
         }
       })
 
@@ -73,7 +73,7 @@
         url: '/informacionOpcional',
         templateUrl: '/components/users/students/request/views/optional.view.html',
         data: {
-          pageTitle: 'Cenfotec Software House | Solicitud de registro'
+          pageTitle: 'Solicitud de registro para Cenfotec Software House'
         }
       })
 

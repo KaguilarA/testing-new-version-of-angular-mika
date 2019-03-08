@@ -25,17 +25,17 @@
       </div>
 
       <!-- use ng-submit to catch the form submission and use our Angular function -->
-      <form ng-submit="vm.preSendRequest(vm.newStudent)" id="form-views" class="mt-4" name="formSolocitudEstudiante"
-        novalidate autocomplete="off">
-        <div ui-view></div>
+      <form ng-submit="vm.preSendRequest(vm.newStudent)" class="mt-4" name="formSolocitudEstudiante" novalidate
+        autocomplete="off">
+        <div id="form-views" ui-view></div>
       </form>
 
     </div>
 
     <!-- show our formData as it is being typed -->
-    <pre>
-        {{ vm.newStudent }}
-      </pre>
+    <p class="text-break">
+      {{ vm.newStudent }}
+    </p>
 
   </div>
 </main>

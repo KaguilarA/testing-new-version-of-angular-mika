@@ -32,9 +32,6 @@
       _password: randomPassword()
     };
     vm.cloudObj = imageUploadService.getConfiguration();
-
-
-
     vm.getCarrers();
 
 
@@ -42,8 +39,7 @@
     vm.preSendRequest = (pnewUser) => {
       angular.element(`#sendRequestFormStudent`).addClass(`fade`);
       angular.element(`#loading`).addClass(`d-block`);
-      vm.newStudent._userIdType = vm.newStudent._userIdType.name;
-      vm.newStudent._carrer = vm.newStudent._userIdType._id;
+
       console.log('vm.newStudent: ', vm.newStudent);
 
       // vm.cloudObj.data.file = pnewUser.photo[0];
