@@ -84,6 +84,11 @@ class User {
   get fullName() {
     let fullName;
     switch (true) {
+
+      case this.secondSurname == `` && this.secondSurname == ``:
+        fullName = `${this.firstName} ${this.firstSurname}`;
+        break;
+
       case this.secondName == ``:
         fullName = `${this.firstName} ${this.firstSurname} ${this.secondSurname}`;
         break;
@@ -99,7 +104,7 @@ class User {
     return fullName;
   }
 
-  get mId() {
+  get id() {
     return this._id;
   }
 
